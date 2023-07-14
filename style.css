@@ -1,0 +1,129 @@
+* {
+    font-family: 'Rubik', sans-serif;
+
+}
+
+/* just change font-weight based on the specific element */
+
+
+/* when you can fixed the font weight for certain elements */
+
+
+
+
+/* ==============================NAV SECTION============================================== */
+
+nav {
+    background-image: url(./front-end-mentor-instruction/images/pattern-bg-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 140px;
+}
+
+nav h1 {
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+nav button {
+    padding: 20px;
+    background-color: black;
+}
+
+nav button:hover {
+    cursor: pointer;
+}
+
+nav div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav div input {
+    width: 500px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-indent: 30px;
+
+}
+
+nav div input:focus {
+    outline: none;
+}
+
+nav div button {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+nav div {
+    height: 60px;
+}
+
+nav input,
+nav button {
+    height: 100%;
+    border: none;
+    width: max-content;
+}
+
+nav input::placeholder {
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 150px;
+    font-size: 18px;
+    color: hsl(0, 0%, 59%);
+
+}
+
+
+
+/* ==============================================HEADER SECTION======================================== */
+#nav-and-header {
+    position: relative;
+
+}
+
+header {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+
+header div h1{
+    font-size: 30px;
+}
+
+header div h2{
+    font-size: 15px;
+    color: hsl(0, 0%, 59%);
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+main {
+    background-color: black;
+    height: 900px;
+}
