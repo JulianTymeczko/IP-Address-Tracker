@@ -16,7 +16,7 @@
 nav {
     background-image: url(./front-end-mentor-instruction/images/pattern-bg-desktop.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     text-align: center;
     padding-top: 40px;
     padding-bottom: 140px;
@@ -24,7 +24,7 @@ nav {
 
 nav h1 {
     color: white;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 40px;
     margin-bottom: 40px;
 }
@@ -79,6 +79,7 @@ nav input::placeholder {
     padding-right: 150px;
     font-size: 18px;
     color: hsl(0, 0%, 59%);
+    
 
 }
 
@@ -96,22 +97,43 @@ header {
     flex-direction: row;
     justify-content: space-around;
     position: absolute;
-    bottom: 0px;
+    bottom: -25%;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
-
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+ 
+  
 
 }
+header div{
+    border-left: 1px solid hsl(0, 0%, 59%);
+    padding-left: 40px;
+    
+  
+} 
+
+#IP-Adress-header{
+    border: none;
+    padding-left: 0px;
+   
+}
+
 
 header div h1{
     font-size: 30px;
+    font-weight: 500;
+    
 }
 
 header div h2{
     font-size: 15px;
     color: hsl(0, 0%, 59%);
-    font-weight: 400;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
 }
 
 
