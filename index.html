@@ -6,13 +6,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="style.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -22,7 +25,8 @@
       <div><input type="text" id="search-input" placeholder="Search for any IP address or domain">
 
 
-        <button type="button" id="enter-Button"><img src="./front-end-mentor-instruction/images/icon-arrow.svg" alt=""></button>
+        <button type="button" id="enter-Button"><img src="./front-end-mentor-instruction/images/icon-arrow.svg"
+            alt=""></button>
       </div>
     </nav>
 
@@ -48,14 +52,17 @@
       </div>
     </header>
   </section>
-  <main></main>
+  <main>
+    <div id="map"></div>
+  </main>
 
 
 
 
 
 
-
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="script.js"></script>
 </body>
 
