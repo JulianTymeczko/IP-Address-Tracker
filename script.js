@@ -1,3 +1,5 @@
+// this is for the map=====================================================================
+
 let myMain = document.querySelector("main")
 
 var map = L.map('map').setView([51.505, -0.09], 13);
@@ -6,6 +8,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
+
+var marker = L.marker([51.5, -0.09]).addTo(map);
+
+// this is for the IP tracker ==============================================================================
+
 
 let enterButton = document.getElementById("enter-Button")
 let userInput = document.getElementById("search-input")
@@ -72,13 +80,16 @@ function getStateAbbreviation(fullStateName) {
 }
 
 window.addEventListener("load", function () {
-    if (localStorage.getItem("IPAdress") && localStorage.getItem("IPAdress") !== undefined){
+    if (localStorage.getItem("IPAdress") && localStorage.getItem("IPAdress") !== undefined) {
         IPAdress.textContent = localStorage.getItem("IPAdress")
         IPlocation.textContent = localStorage.getItem("Location")
         timezone.textContent = localStorage.getItem("Timezone")
         ISP.textContent = localStorage.getItem("ISP")
+        map.setView([localStorage.getItem("LAT"), localStorage.getItem("LON")], 13);
+        marker.setLatLng([localStorage.getItem("LAT"), localStorage.getItem("LON")]);
+
     }
-    
+
 })
 enterButton.addEventListener("click", function () {
     let domainNameURL = `https://geo.ipify.org/api/v2/country,city?apiKey=at_lx3Nkrli6RUwnOdcpcD78sf74bS13&ipAddress=8.8.8.8&domain=${userInput.value}`
@@ -92,9 +103,9 @@ enterButton.addEventListener("click", function () {
 
             console.log(data)
             console.log(data.ip)
-           
+
             console.log(data.location.city)
-            
+
             localStorage.setItem("IPAdress", data.ip)
             console.log(data.location.country)
             console.log(data.location.postalCode)
@@ -107,6 +118,13 @@ enterButton.addEventListener("click", function () {
             localStorage.setItem("Timezone", `UTC${data.location.timezone}`)
             console.log(data.isp)
             localStorage.setItem("ISP", data.isp)
+            console.log(data.location.lat)
+            localStorage.setItem("LAT", data.location.lat)
+            localStorage.setItem("LON", data.location.lng)
+            map.setView([data.location.lat, data.location.lng], 13);
+            marker.setLatLng([data.location.lat, data.location.lng]);
+
+
 
         })
         .then(function () {
@@ -114,6 +132,7 @@ enterButton.addEventListener("click", function () {
             IPlocation.textContent = localStorage.getItem("Location")
             timezone.textContent = localStorage.getItem("Timezone")
             ISP.textContent = localStorage.getItem("ISP")
+
 
         })
 
