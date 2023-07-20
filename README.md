@@ -2,6 +2,8 @@
 
 ## Link to Deployed Application
 
+https://juliantymeczko.github.io/IP-Address-Tracker/
+
 ## Description
 
 This application uses HTML, CSS, JavaScript and 2 APIs. One is a server-side API which collects IP-adresses and gives information such as, location, ISP, and timezone. In addition, I used the
