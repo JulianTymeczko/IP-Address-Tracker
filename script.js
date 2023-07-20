@@ -76,7 +76,7 @@ function getStateAbbreviation(fullStateName) {
     };
 
     const formattedStateName = fullStateName.trim();
-    return states[formattedStateName] || 'Invalid State';
+    return states[formattedStateName] || fullStateName;
 }
 
 window.addEventListener("load", function () {
@@ -89,7 +89,61 @@ window.addEventListener("load", function () {
         marker.setLatLng([localStorage.getItem("LAT"), localStorage.getItem("LON")]);
 
     }
+    else {
+        fetch(`https://api.ipify.org?format=json`)
+            .then((response) => response.json())
+            .then(function (data) {
+                console.log(data)
+                let yourIPURL = `https://geo.ipify.org/api/v2/country,city?apiKey=at_lx3Nkrli6RUwnOdcpcD78sf74bS13&ipAddress=8.8.8.8&domain=${data.ip}`
+                fetch(yourIPURL)
+                    .then(function (response) {
+                        return response.json()
+                    })
+                    .then(function (data) {
 
+
+
+                        console.log(data)
+                        console.log(data.ip)
+
+                        console.log(data.location.city)
+
+                        localStorage.setItem("IPAdress", data.ip)
+                        console.log(data.location.country)
+                        console.log(data.location.postalCode)
+                        console.log(data.location.region)
+                        let twoLetterRegion = getStateAbbreviation(data.location.region)
+                        localStorage.setItem("Location", `${data.location.city},${twoLetterRegion} ${data.location.postalCode}`)
+
+
+                        console.log(data.location.timezone)
+                        localStorage.setItem("Timezone", `UTC${data.location.timezone}`)
+                        console.log(data.isp)
+                        localStorage.setItem("ISP", data.isp)
+                        console.log(data.location.lat)
+                        localStorage.setItem("LAT", data.location.lat)
+                        localStorage.setItem("LON", data.location.lng)
+                        map.setView([data.location.lat, data.location.lng], 13);
+                        marker.setLatLng([data.location.lat, data.location.lng]);
+
+
+
+                    })
+                    .then(function () {
+                        IPAdress.textContent = localStorage.getItem("IPAdress")
+                        IPlocation.textContent = localStorage.getItem("Location")
+                        timezone.textContent = localStorage.getItem("Timezone")
+                        ISP.textContent = localStorage.getItem("ISP")
+
+
+                    })
+
+
+
+
+
+            })
+    }
 })
 enterButton.addEventListener("click", function () {
     let domainNameURL = `https://geo.ipify.org/api/v2/country,city?apiKey=at_lx3Nkrli6RUwnOdcpcD78sf74bS13&ipAddress=8.8.8.8&domain=${userInput.value}`
