@@ -9,8 +9,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+var customIcon = L.icon({
+    iconUrl: './front-end-mentor-instruction/images/icon-location.svg',
+    iconSize: [46, 56],
+    iconAnchor: [23, 56],
+});
 
-var marker = L.marker([51.5, -0.09]).addTo(map);
+
+var marker = L.marker([51.5, -0.09], { icon: customIcon }).addTo(map);
 
 // this is for the IP tracker ==============================================================================
 
