@@ -3,7 +3,8 @@
 
 }
 :root{
-    --animation-duration: 0.4s;
+    --animation-duration: 0.5s;
+    
 }
 
 /* just change font-weight based on the specific element */
@@ -33,6 +34,7 @@ nav h1 {
     animation-name: Fade-In;
     animation-duration: var(--animation-duration);
     animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.3, 1, 0.9, 1);
    
 }
 
@@ -69,6 +71,7 @@ nav div {
     animation-duration: var(--animation-duration);
     animation-fill-mode: both;
     animation-delay: var(--animation-duration);
+    animation-timing-function: cubic-bezier(0.4, 1, 0.9, 1);
 }
 
 nav div input {
@@ -148,6 +151,7 @@ header {
     animation-duration: var(--animation-duration);
     animation-fill-mode: both;
     animation-delay: calc(var(--animation-duration) * 2);
+    animation-timing-function: cubic-bezier(0.4, 1, 0.9, 1);
   
 
 }
